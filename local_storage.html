@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local storage</title>
+    <style>
+        *{
+            text-align: center;
+            background-color: lightblue;
+            font-family: Arial,sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h2>Local Storage Exam</h2>
+    <input type="text" id="email" placeholder="Enter your email">
+    <br><br>
+    <input type="text" id="password" placeholder="Enter your password">
+    <br><br>
+    <button onclick="login()">login</button>
+    <button onclick="logout()">logout</button>
+    <p id="message"></p>
+
+    <script>
+        function login() {
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            if(email === "shreya" && password === "12345") {
+                 localStorage.setItem("email", email);
+                document.getElementById("message").innerText = "Login successful!";
+                return;
+            }
+        }
+        function logout() {
+            localStorage.removeItem("email");
+            document.getElementById("message").innerText = "Logged out successfully!";
+        }
+    </script>
+</body>
+</html>
